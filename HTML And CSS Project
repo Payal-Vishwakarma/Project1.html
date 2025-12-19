@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery Layout</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f5f5;
+      padding: 100px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-areas:
+        "header header header"
+        "video player table"
+        "about player table"
+        "list player table";
+      grid-template-columns: 2fr 2fr 2fr;
+      gap: 20px;
+    }
+
+    .header {
+      grid-area: header;
+      background: #fff;
+      padding: 15px;
+      border: 1px solid #ccc;
+    }
+
+    .header h1 {
+      margin-bottom: 10px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 5px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 60px;
+      object-fit: cover;
+      border: 1px solid #aaa;
+    }
+
+    .video-controls {
+      grid-area: video;
+      background: #fff;
+      padding: 20px;
+      text-align: center;
+      border: 1px solid #ccc;
+    }
+
+    .video-controls button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+    }
+
+    .media-player {
+      grid-area: player;
+      background: #fff;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .media-player video {
+      width: 95%;
+      height: 400px;
+    }
+
+    .table {
+      grid-area: table;
+      background: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+
+    .table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .table th, .table td {
+      border: 1px solid #000;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .about {
+      grid-area: about;
+      background: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+
+    .list {
+      grid-area: list;
+      background: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+
+    .list ul {
+      list-style: square;
+      padding-left: 20px;
+    }
+
+    .list li {
+      margin-bottom: 8px;
+    }
+
+    .flute-audio {
+      grid-column: 1 / span 3;
+      background: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header & Gallery -->
+    <div class="header">
+      <h1>Subject: Gallery</h1>
+      <div class="gallery">
+        <img src="C:\Users\AS Thanushree\Pictures\Saved Pictures\WhatsApp Image 2021-12-08 at 18.50.10 (1).jpeg">
+        <img src="https://plantcaretoday.com/wp-content/uploads/sm-24232-plumeria-flowers-t1.jpg">
+        <img src="https://ts2.mm.bing.net/th?id=OIP.Xq8bQR7QZW3Qg0XlYepcMAHaE8&pid=15.1">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.HuNMLrB1e77H6opQE6XLVQHaEo?r=0&rs=1&pid=ImgDetMain&o=7&rm=3">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/049/235/557/small_2x/hindu-shiva-god-head-silhuette-vactor-free-vector.jpg">
+        <img src="https://tse1.mm.bing.net/th/id/OIP._SvPOTOk_JxRIHhGJFpKdwHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3">
+        <img src="https://static.vecteezy.com/system/resources/previews/013/809/024/non_2x/beautiful-mountain-landscape-picturesque-high-tatra-lake-in-summer-morning-amazing-nature-panorama-rocks-boulders-with-calm-water-reflection-and-pine-tree-forest-tranquil-scenic-view-sunny-clouds-photo.jpg">
+        <img src="https://tse1.mm.bing.net/th/id/OIP.OrAHIj-iBoe9NpJ7RiINbQHaE8?r=0&w=1024&h=684&rs=1&pid=ImgDetMain&o=7&rm=3">
+        <img src="https://th.bing.com/th/id/R.7975a0066fbda13e8dedb2ae248e4cdb?rik=dD9efrUkTRLR4g&riu=http%3a%2f%2fwww.stylemotivation.com%2fwp-content%2fuploads%2f2013%2f09%2fflower-garden-ideas-5.jpg&ehk=RUS1%2fnuMZWga59kPzk3dYMscTz%2bnX2HCP9ixCxLxe2Q%3d&risl=&pid=ImgRaw&r=0">
+        <img src="https://th.bing.com/th/id/OIP.Y4B69ADXvN3DgjaycA5SZAHaE6?w=318&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3">
+        <img src="https://th.bing.com/th/id/OIP.EB90cGaBZOn-0wtcgboTiAHaEB?w=295&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.675O8BEqTcSrXjS4G5O7_gHaHa?r=0&w=500&h=500&rs=1&pid=ImgDetMain&o=7&rm=3">
+      </div>
+    </div>
+
+    <!-- Video Controls -->
+    <div class="video-controls">
+      <button onclick="playVideo()">▶️ Play</button>
+      <button onclick="nextVideo()">▶️ Next</button>
+    </div>
+
+    <!-- Video Player -->
+    <div class="media-player">
+      <video id="videoPlayer" controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Product Table -->
+    <div class="table">
+      <h3>Shopping Products</h3>
+      <table>
+        <tr><th>ID</th><th>Product</th><th>Quantity</th><th>Price</th></tr>
+        <tr><td>1</td><td>Flute</td><td>2</td><td>₹500</td></tr>
+        <tr><td>2</td><td>Drum</td><td>1</td><td>₹1200</td></tr>
+        <tr><td>3</td><td>Keyboard</td><td>1</td><td>₹5500</td></tr>
+        <tr><td>4</td><td>Guitar</td><td>3</td><td>₹7000</td></tr>
+      </table>
+    </div>
+
+    <!-- About with Login -->
+    <div class="about">
+      <h3>About</h3>
+      <p>This website displays a multimedia gallery with video playback, shopping table, and descriptions.</p>
+      <p><strong>Origin:</strong> July</p>
+      <hr style="margin: 15px 0;">
+
+      <h3>Log in</h3>
+      <form onsubmit="return false;">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br>
+
+        <input type="checkbox" id="showPassword" onclick="togglePassword()"> 
+        <label for="showPassword">Show password</label><br><br>
+
+        <button type="submit">Login</button>
+        <button type="reset">Cancel</button><br><br>
+
+        <p>Forgot password? <a href="#">Click here</a></p>
+      </form>
+    </div>
+
+    <!-- List Section -->
+    <div class="list">
+      <h3>List Section</h3>
+      <ul>
+        <li>News</li>
+        <li>Updates</li>
+        <li>Events</li>
+      </ul>
+    </div>
+
+    <!-- 🎵 Flute Audio Player -->
+    <div class="flute-audio">
+      <h3>Relaxing Flute Audio</h3>
+      <audio controls>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const videoList = [
+      "https://www.w3schools.com/html/mov_bbb.mp4",
+      "https://www.w3schools.com/html/movie.mp4"
+    ];
+    let videoIndex = 0;
+
+    function playVideo() {
+      const video = document.getElementById("videoPlayer");
+      video.play();
+    }
+
+    function nextVideo() {
+      const video = document.getElementById("videoPlayer");
+      videoIndex = (videoIndex + 1) % videoList.length;
+      video.src = videoList[videoIndex];
+      video.play();
+    }
+
+    function togglePassword() {
+      const pw = document.getElementById("password");
+      pw.type = pw.type === "password" ? "text" : "password";
+    }
+  </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
